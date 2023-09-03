@@ -1,3 +1,7 @@
 export default function Picture() {
-  return <section className="editor-form">Picture</section>;
+  return (
+    <section id="picture-form" role="tabpanel" className="editor-form">
+      Picture
+    </section>
+  );
 }

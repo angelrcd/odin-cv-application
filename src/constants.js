@@ -1,1 +1,1 @@
-export const TABS = ["Picture ", "General", "Information", "Layout"];
+export const TABS = ["Picture", "General", "Information", "Layout"];
