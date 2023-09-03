@@ -1,3 +1,3 @@
 export default function Layout() {
-  return <div>Layout</div>;
+  return <section className="editor-form">Layout</section>;
 }

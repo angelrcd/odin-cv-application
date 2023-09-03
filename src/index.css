@@ -26,11 +26,47 @@ p, h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
+body {
+  background-color: #F3F4F6;
+  padding: 1rem;
+}
+
 #root {
   display: flex;
   justify-content: space-around;
 }
 
+/* Tabs */
+
+.tabs-container {
+  padding-left: 0px;
+  list-style: none;
+  display: flex;
+}
+
+.tabs-container li {
+  flex: 1;
+}
+
+.tab {
+  cursor: pointer;
+  background-color: #EEEEEE;
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+}
+
 .tab.selected {
-  font-weight: 900;
+  background-color: white;
+  border-bottom-color: white;
+}
+
+.editor-container {
+  margin-bottom: 10px;
+}
+
+.editor-form {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-top-color: white;
+  min-height: 600px;
 }

@@ -9,9 +9,9 @@ export default function Editor() {
   const changeTab = (tabIndex) => setCurrentTab(tabIndex);
 
   return (
-    <>
+    <div className="editor-container">
       <EditorTabs currentTab={currentTab} onTabChange={changeTab} />
       <EditorForms currentTab={currentTab} />
-    </>
+    </div>
   );
 }

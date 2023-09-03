@@ -1,3 +1,3 @@
 export default function Picture() {
-  return <div>Picture</div>;
+  return <section className="editor-form">Picture</section>;
 }

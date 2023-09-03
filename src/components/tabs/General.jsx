@@ -1,3 +1,3 @@
 export default function General() {
-  return <div>General</div>;
+  return <section className="editor-form">General</section>;
 }
