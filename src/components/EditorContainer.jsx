@@ -5,7 +5,7 @@ export default function EditorContainer({ generalState, generalHandlers }) {
   return (
     <main>
       <Editor generalState={generalState} generalHandlers={generalHandlers} />
-      <EditorButtons />
+      <EditorButtons generalHandlers={generalHandlers} />
     </main>
   );
 }
