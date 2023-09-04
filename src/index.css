@@ -60,6 +60,23 @@ body {
   border-bottom-color: white;
 }
 
+.editor-form {
+  padding: 1rem;
+}
+
+/* General tab */
+#general-form {
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .editor-container {
   margin-bottom: 10px;
 }

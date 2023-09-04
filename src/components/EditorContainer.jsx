@@ -1,10 +1,10 @@
 import Editor from "./Editor";
 import EditorButtons from "./EditorButtons";
 
-export default function EditorContainer() {
+export default function EditorContainer({ generalState, generalHandlers }) {
   return (
     <main>
-      <Editor />
+      <Editor generalState={generalState} generalHandlers={generalHandlers} />
       <EditorButtons />
     </main>
   );
