@@ -62,21 +62,40 @@ body {
 
 .editor-form {
   padding: 1rem;
+
+  & form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  & label {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Picture profile */
+#picture-form {
+  & img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 100%;
+  }
+}
+
+.editor-image-container {
+  position: relative;
+}
+
+.editor-image-container .remove-pic {
+  position: absolute;
+  top: 80%;
+  left: 150px;
 }
 
 /* General tab */
-#general-form {
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-
-  label {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
 .editor-container {
   margin-bottom: 10px;
 }

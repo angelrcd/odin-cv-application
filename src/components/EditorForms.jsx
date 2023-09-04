@@ -5,12 +5,16 @@ import Layout from "./tabs/Layout";
 
 export default function EditorForms({
   currentTab,
+  profilePic,
+  onChangeProfile,
   generalState,
   generalHandlers,
 }) {
   switch (currentTab) {
     case 0:
-      return <Picture />;
+      return (
+        <Picture profilePic={profilePic} onChangeProfile={onChangeProfile} />
+      );
     case 1:
       return (
         <General

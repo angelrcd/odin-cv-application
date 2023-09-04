@@ -1,7 +1,8 @@
 import { EXAMPLE } from "../constants";
 
-export default function EditorButtons({ generalHandlers }) {
+export default function EditorButtons({ onChangeProfile, generalHandlers }) {
   const setExample = () => {
+    onChangeProfile(EXAMPLE.profilePicUrl);
     generalHandlers.handleFirstNameChange(EXAMPLE.firstName);
     generalHandlers.handleLastNameChange(EXAMPLE.lastName);
     generalHandlers.handleEmailChange(EXAMPLE.email);
@@ -10,6 +11,7 @@ export default function EditorButtons({ generalHandlers }) {
   };
 
   const clear = () => {
+    onChangeProfile("");
     Object.values(generalHandlers).forEach((handler) => {
       handler("");
     });

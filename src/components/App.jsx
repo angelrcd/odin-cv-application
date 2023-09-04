@@ -5,6 +5,7 @@ import { EXAMPLE } from "../constants";
 
 function App() {
   // State
+  const [profilePic, setProfilePic] = useState("/sample-profile.jpg");
   const [firstName, setfirstName] = useState(EXAMPLE.firstName);
   const [lastName, setlastName] = useState(EXAMPLE.lastName);
   const [email, setEmail] = useState(EXAMPLE.email);
@@ -29,10 +30,12 @@ function App() {
   return (
     <>
       <EditorContainer
+        profilePic={profilePic}
+        onChangeProfile={setProfilePic}
         generalState={generalState}
         generalHandlers={generalHandlers}
       />
-      <Preview generalState={generalState} />
+      <Preview generalState={generalState} profilePic={profilePic} />
     </>
   );
 }

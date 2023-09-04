@@ -1,5 +1,6 @@
 export const TABS = ["Picture", "General", "Information", "Layout"];
 export const EXAMPLE = {
+  profilePicUrl: "/sample-profile.jpg",
   firstName: "John",
   lastName: "Doe",
   email: "john_doe@email.com",
