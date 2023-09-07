@@ -6,6 +6,10 @@ export default function EditorContainer({
   onChangeProfile,
   generalState,
   generalHandlers,
+  education,
+  onEducationChange,
+  experience,
+  onExperienceChange,
 }) {
   return (
     <main>
@@ -14,10 +18,16 @@ export default function EditorContainer({
         onChangeProfile={onChangeProfile}
         generalState={generalState}
         generalHandlers={generalHandlers}
+        education={education}
+        onEducationChange={onEducationChange}
+        experience={experience}
+        onExperienceChange={onExperienceChange}
       />
       <EditorButtons
         onChangeProfile={onChangeProfile}
         generalHandlers={generalHandlers}
+        onEducationChange={onEducationChange}
+        onExperienceChange={onExperienceChange}
       />
     </main>
   );

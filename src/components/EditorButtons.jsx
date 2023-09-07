@@ -1,6 +1,11 @@
 import { EXAMPLE } from "../constants";
 
-export default function EditorButtons({ onChangeProfile, generalHandlers }) {
+export default function EditorButtons({
+  onChangeProfile,
+  generalHandlers,
+  onEducationChange,
+  onExperienceChange,
+}) {
   const setExample = () => {
     onChangeProfile(EXAMPLE.profilePicUrl);
     generalHandlers.handleFirstNameChange(EXAMPLE.firstName);
@@ -8,6 +13,8 @@ export default function EditorButtons({ onChangeProfile, generalHandlers }) {
     generalHandlers.handleEmailChange(EXAMPLE.email);
     generalHandlers.handlePhoneChange(EXAMPLE.phone);
     generalHandlers.handleLocationChange(EXAMPLE.location);
+    onEducationChange(EXAMPLE.education);
+    onExperienceChange(EXAMPLE.experience);
   };
 
   const clear = () => {
@@ -15,6 +22,8 @@ export default function EditorButtons({ onChangeProfile, generalHandlers }) {
     Object.values(generalHandlers).forEach((handler) => {
       handler("");
     });
+    onEducationChange([]);
+    onExperienceChange([]);
   };
 
   return (

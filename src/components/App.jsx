@@ -12,6 +12,8 @@ function App() {
   const [phone, setPhone] = useState(EXAMPLE.phone);
   const [location, setLocation] = useState(EXAMPLE.location);
   const generalState = { firstName, lastName, email, phone, location };
+  const [experience, setExperience] = useState(EXAMPLE.experience);
+  const [education, setEducation] = useState(EXAMPLE.education);
 
   // Event Handlers
   const handleFirstNameChange = (newVal) => setfirstName(newVal);
@@ -34,8 +36,17 @@ function App() {
         onChangeProfile={setProfilePic}
         generalState={generalState}
         generalHandlers={generalHandlers}
+        education={education}
+        onEducationChange={setEducation}
+        experience={experience}
+        onExperienceChange={setExperience}
       />
-      <Preview generalState={generalState} profilePic={profilePic} />
+      <Preview
+        generalState={generalState}
+        profilePic={profilePic}
+        education={education}
+        experience={experience}
+      />
     </>
   );
 }

@@ -1,4 +1,9 @@
-export default function Preview({ generalState, profilePic }) {
+export default function Preview({
+  generalState,
+  profilePic,
+  education,
+  experience,
+}) {
   const fullName = generalState.firstName + " " + generalState.lastName;
   return (
     <div>
@@ -7,6 +12,8 @@ export default function Preview({ generalState, profilePic }) {
       <p>Email: {generalState.email}</p>
       <p>Phone: {generalState.phone}</p>
       <p>Location: {generalState.location}</p>
+      <p>{JSON.stringify(experience)}</p>
+      <p>{JSON.stringify(education)}</p>
     </div>
   );
 }

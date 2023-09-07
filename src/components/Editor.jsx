@@ -8,6 +8,10 @@ export default function Editor({
   onChangeProfile,
   generalState,
   generalHandlers,
+  education,
+  onEducationChange,
+  experience,
+  onExperienceChange,
 }) {
   const [currentTab, setCurrentTab] = useState(0);
 
@@ -22,6 +26,10 @@ export default function Editor({
         onChangeProfile={onChangeProfile}
         generalState={generalState}
         generalHandlers={generalHandlers}
+        education={education}
+        onEducationChange={onEducationChange}
+        experience={experience}
+        onExperienceChange={onExperienceChange}
       />
     </div>
   );
