@@ -17,11 +17,13 @@ export default function General({ generalState, generalHandlers }) {
         />
         <GeneralInput
           label="Email"
+          type="email"
           state={generalState.email}
           handler={generalHandlers.handleEmailChange}
         />
         <GeneralInput
           label="Phone"
+          type="tel"
           state={generalState.phone}
           handler={generalHandlers.handlePhoneChange}
         />
