@@ -109,20 +109,46 @@ body {
 }
 
 /* Information tab */
-#information-form {
-  & details[open] summary {
-    color: #1095C1;
-  }
+#information-form ul {
+  padding: 0;
+  list-style: none;
+}
 
-  & details {
-    color: black;
-  }
+.accordion {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+}
 
-  & details {
-    border-bottom: 1px solid #000;
-  }
+.accordion-toggle {
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+  border: none;
+  background-color: transparent;
+  text-align: left;
+  transition: all 100ms ease-in-out;
+}
 
-  & summary::before {
-    display: none;
-  }
+.accordion-toggle.open {
+  color: #1095C1;
+}
+
+.accordion-toggle::after {
+  content: ">";
+  position: absolute;
+  display: inline-block;
+  margin-left: auto;
+  transition: transform  200ms ease-in-out;
+  right: 10px;
+}
+
+.accordion-toggle.open::after {
+  transform: rotate(90deg);
+}
+
+.data-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between  ;
 }

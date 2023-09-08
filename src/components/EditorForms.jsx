@@ -16,13 +16,12 @@ export default function EditorForms({
   onExperienceChange,
 }) {
   const [informationDetailsOpen, setInformationDetailsOpen] = useState(null);
-  const handleDetailsChange = (e, detailToOpen) => {
-    e.preventDefault();
-    if (detailToOpen === informationDetailsOpen) {
+  const handleDetailsChange = (accordionToOpen) => {
+    if (accordionToOpen === informationDetailsOpen) {
       setInformationDetailsOpen(null);
       return;
     }
-    setInformationDetailsOpen(detailToOpen);
+    setInformationDetailsOpen(accordionToOpen);
   };
 
   switch (currentTab) {
@@ -44,8 +43,8 @@ export default function EditorForms({
           onEducationChange={onEducationChange}
           experience={experience}
           onExperienceChange={onExperienceChange}
-          detailsOpen={informationDetailsOpen}
-          onDetailsChange={handleDetailsChange}
+          accordionOpen={informationDetailsOpen}
+          onAccordionOpenChange={handleDetailsChange}
         />
       );
     case 3:
