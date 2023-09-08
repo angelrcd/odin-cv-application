@@ -27,7 +27,7 @@ export default function EditorButtons({
   };
 
   return (
-    <div>
+    <div className="buttons-container">
       <button onClick={setExample}>Example</button>
       <button onClick={clear}>Clear</button>
     </div>

@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export default function Information({
   education,
   onEducationChange,
@@ -88,6 +90,7 @@ function AccordionContent({ summary, data, onDataChange }) {
         ))}
       </ul>
       <button>+ {summary}</button>
+      <EditForm />
     </div>
   );
 }
@@ -111,5 +114,52 @@ function DataListItem({ dataUnit, dataList, onDataChange }) {
         <button onClick={() => removeData(dataUnit, dataList)}>remove</button>
       </div>
     </li>
+  );
+}
+
+function EditForm() {
+  const [ongoing, setOngoing] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(e);
+  };
+
+  return (
+    <form id="info-form" onSubmit={handleSubmit}>
+      <label>
+        <span>Name</span>
+        <input required type="text" placeholder="Degree/course name" />
+      </label>
+      <label>
+        <span>Organization</span>
+        <input required type="text" placeholder="School" />
+      </label>
+      <label className="ongoing-label">
+        <span>Ongoing: </span>
+        <input type="checkbox" onChange={() => setOngoing(!ongoing)} />
+      </label>
+      <div className="date-row">
+        <label>
+          <span>Start date</span>
+          <input required type="mont" placeholder="2018-05" />
+        </label>
+        {!ongoing && (
+          <label>
+            <span>End date</span>
+            <input required type="month" placeholder="2020-05" />
+          </label>
+        )}
+      </div>
+
+      <label>
+        <span>Description</span>
+        <textarea className="info-form-description"></textarea>
+      </label>
+      <div className="buttons-container">
+        <button type="button">Cancel</button>
+        <button type="submit">Save</button>
+      </div>
+    </form>
   );
 }

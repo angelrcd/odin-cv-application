@@ -54,6 +54,7 @@ body {
   background-color: #EEEEEE;
   border: 1px solid #ddd;
   padding: 0.5rem 1rem;
+  width: 100%;
 }
 
 .tab.selected {
@@ -74,6 +75,12 @@ body {
     display: flex;
     flex-direction: column;
   }
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: end;
+  gap: 0.5rem;
 }
 
 /* Picture profile */
@@ -151,4 +158,23 @@ body {
   gap: 1rem;
   align-items: center;
   justify-content: space-between  ;
+}
+
+.ongoing-label {
+  display: block !important;
+}
+
+.date-row {
+  display: flex;
+  width: fit-content;
+  gap: 1rem;
+}
+
+.date-row label {
+  flex: 1;
+  max-width: 100px;
+}
+
+.info-form-description {
+  resize: vertical;
 }
