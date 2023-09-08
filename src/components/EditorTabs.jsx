@@ -6,11 +6,12 @@ export default function EditorTabs({ currentTab, onTabChange }) {
       <ul role="tablist" className="tabs-container">
         {TABS.map((tab, index) => {
           return (
-            <li key={index}>
+            <li
+              key={index}
+              role="tab"
+              aria-selected={currentTab === index}
+              aria-controls={tab.toLowerCase().concat("-form")}>
               <button
-                role="tab"
-                aria-selected={currentTab === index}
-                aria-controls={tab.toLowerCase().concat("-form")}
                 className={`tab ${currentTab === index ? "selected" : ""}`}
                 onClick={() => onTabChange(index)}>
                 {tab}
