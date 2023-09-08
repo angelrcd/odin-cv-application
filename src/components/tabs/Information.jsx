@@ -79,7 +79,12 @@ function AccordionContent({ summary, data, onDataChange }) {
       aria-labelledby={summary.toLowerCase() + "-toggle"}>
       <ul>
         {data.map((dataUnit) => (
-          <DataListItem key={dataUnit.id} name={dataUnit.name} />
+          <DataListItem
+            key={dataUnit.id}
+            dataList={data}
+            dataUnit={dataUnit}
+            onDataChange={onDataChange}
+          />
         ))}
       </ul>
       <button>+ {summary}</button>
@@ -87,13 +92,23 @@ function AccordionContent({ summary, data, onDataChange }) {
   );
 }
 
-function DataListItem({ name }) {
+function DataListItem({ dataUnit, dataList, onDataChange }) {
+  function removeData(dataToRemove, dataList) {
+    const indexToRemove = dataList.findIndex((data) => data.id === dataUnit.id);
+    const newDataList = [
+      ...dataList.slice(0, indexToRemove),
+      ...dataList.slice(indexToRemove + 1),
+    ];
+    console.log(newDataList);
+    onDataChange(newDataList);
+  }
+
   return (
     <li className="data-item">
-      <span>{name}</span>
+      <span>{dataUnit.name}</span>
       <div>
         <button>edit</button>
-        <button>remove</button>
+        <button onClick={() => removeData(dataUnit, dataList)}>remove</button>
       </div>
     </li>
   );
