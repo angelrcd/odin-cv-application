@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Information({
   education,
@@ -39,6 +40,11 @@ function Accordion({
   accordionOpen,
   onAccordionOpenChange,
 }) {
+  const [isEditOpen, setIsEditOpen] = useState(false);
+  const handleEditToggle = () => {
+    setIsEditOpen(!isEditOpen);
+  };
+
   return (
     <div className="accordion">
       <Summary
@@ -47,9 +53,17 @@ function Accordion({
         accordionOpen={accordionOpen}
         onAccordionOpenChange={onAccordionOpenChange}
       />
-      {accordionOpen === index && (
+      {accordionOpen === index && !isEditOpen && (
         <AccordionContent
           summary={summary}
+          data={data}
+          onDataChange={onDataChange}
+          onEditToggle={handleEditToggle}
+        />
+      )}
+      {accordionOpen === index && isEditOpen && (
+        <EditForm
+          onEditToggle={handleEditToggle}
           data={data}
           onDataChange={onDataChange}
         />
@@ -74,7 +88,7 @@ function Summary({ summary, index, accordionOpen, onAccordionOpenChange }) {
   );
 }
 
-function AccordionContent({ summary, data, onDataChange }) {
+function AccordionContent({ summary, data, onDataChange, onEditToggle }) {
   return (
     <div
       id={summary.toLowerCase() + "-content"}
@@ -89,8 +103,7 @@ function AccordionContent({ summary, data, onDataChange }) {
           />
         ))}
       </ul>
-      <button>+ {summary}</button>
-      <EditForm />
+      <button onClick={onEditToggle}>+ {summary}</button>
     </div>
   );
 }
@@ -117,23 +130,41 @@ function DataListItem({ dataUnit, dataList, onDataChange }) {
   );
 }
 
-function EditForm() {
+function EditForm({ onEditToggle, data, onDataChange }) {
   const [ongoing, setOngoing] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e);
+
+    const form = e.target;
+    const formData = new FormData(form);
+    const formJson = Object.fromEntries(formData.entries());
+
+    // Generate a unique id to use as key
+    formJson.id = uuidv4();
+    // Indicate ongoing if no endDate
+    if (!formJson.endDate) {
+      formJson.endDate = "present";
+    }
+
+    onDataChange([...data, formJson]);
+    onEditToggle();
   };
 
   return (
     <form id="info-form" onSubmit={handleSubmit}>
       <label>
         <span>Name</span>
-        <input required type="text" placeholder="Degree/course name" />
+        <input
+          required
+          name="name"
+          type="text"
+          placeholder="Degree/course name"
+        />
       </label>
       <label>
         <span>Organization</span>
-        <input required type="text" placeholder="School" />
+        <input required name="organization" type="text" placeholder="School" />
       </label>
       <label className="ongoing-label">
         <span>Ongoing: </span>
@@ -142,22 +173,26 @@ function EditForm() {
       <div className="date-row">
         <label>
           <span>Start date</span>
-          <input required type="mont" placeholder="2018-05" />
+          <input name="startDate" required type="mont" placeholder="2018-05" />
         </label>
         {!ongoing && (
           <label>
             <span>End date</span>
-            <input required type="month" placeholder="2020-05" />
+            <input name="endDate" required type="month" placeholder="2020-05" />
           </label>
         )}
       </div>
 
       <label>
         <span>Description</span>
-        <textarea className="info-form-description"></textarea>
+        <textarea
+          name="description"
+          className="info-form-description"></textarea>
       </label>
       <div className="buttons-container">
-        <button type="button">Cancel</button>
+        <button onClick={onEditToggle} type="button">
+          Cancel
+        </button>
         <button type="submit">Save</button>
       </div>
     </form>

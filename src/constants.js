@@ -12,30 +12,30 @@ export const EXAMPLE = {
   location: "New York, USA",
   experience: [
     {
-      id: "example1",
       name: "Experiencia1",
       organization: "Escuela de Organización Industrial",
       startDate: dayjs("1970-00-00").format("MMM YYYY"),
       endDate: dayjs("1970-10-00").format("MMM YYYY"),
       description: "Despliegue y mantenimiento de servicios de Azure",
+      id: "example1",
     },
     {
-      id: "example2",
       name: "Experiencia2",
       organization: "Escuela de Organización Industrial",
       startDate: dayjs("1970-00-00").format("MMM YYYY"),
       endDate: dayjs("1970-10-00").format("MMM YYYY"),
       description: "Despliegue y mantenimiento de servicios de Azure",
+      id: "example2",
     },
   ],
   education: [
     {
-      id: "example",
       name: "Educacion",
       organization: "Escuela de Organización Industrial",
       startDate: dayjs("1970-00-00").format("MMM YYYY"),
       endDate: dayjs("1970-10-00").format("MMM YYYY"),
       description: "Despliegue y mantenimiento de servicios de Azure",
+      id: "example",
     },
   ],
 };
