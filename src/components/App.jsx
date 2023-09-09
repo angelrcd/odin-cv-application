@@ -14,6 +14,11 @@ function App() {
   const generalState = { firstName, lastName, email, phone, location };
   const [experience, setExperience] = useState(EXAMPLE.experience);
   const [education, setEducation] = useState(EXAMPLE.education);
+  const [layout, setLayout] = useState("top");
+  const [color, setColor] = useState("#0E374E");
+  const [font, setFont] = useState("serif");
+  const styleData = [layout, color, font];
+  const styleHandlers = [setLayout, setColor, setFont];
 
   // Event Handlers
   const handleFirstNameChange = (newVal) => setfirstName(newVal);
@@ -40,12 +45,15 @@ function App() {
         onEducationChange={setEducation}
         experience={experience}
         onExperienceChange={setExperience}
+        styles={styleData}
+        styleHandlers={styleHandlers}
       />
       <Preview
         generalState={generalState}
         profilePic={profilePic}
         education={education}
         experience={experience}
+        styles={styleData}
       />
     </>
   );

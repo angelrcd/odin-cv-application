@@ -12,6 +12,8 @@ export default function Editor({
   onEducationChange,
   experience,
   onExperienceChange,
+  styles,
+  styleHandlers,
 }) {
   const [currentTab, setCurrentTab] = useState(0);
 
@@ -30,6 +32,8 @@ export default function Editor({
         onEducationChange={onEducationChange}
         experience={experience}
         onExperienceChange={onExperienceChange}
+        styles={styles}
+        styleHandlers={styleHandlers}
       />
     </div>
   );

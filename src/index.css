@@ -37,6 +37,21 @@ body {
   justify-content: space-around;
 }
 
+.primary-button {
+  background-color: #1095C1;
+  cursor: pointer;  
+  font-weight: 600;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  transition: all 100ms ease-in-out;
+}
+
+.primary-button:hover {
+  background-color: hsl(195, 80%, 50%);
+}
+
 /* Tabs */
 
 .tabs-container {
@@ -151,6 +166,12 @@ body {
 
 .accordion-toggle.open::after {
   transform: rotate(90deg);
+}
+
+.add-info-button {
+  width: 100%;
+  margin-top: 1rem;
+  
 }
 
 .data-item {

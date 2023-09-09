@@ -103,7 +103,9 @@ function AccordionContent({ summary, data, onDataChange, onEditToggle }) {
           />
         ))}
       </ul>
-      <button onClick={onEditToggle}>+ {summary}</button>
+      <button className="add-info-button primary-button" onClick={onEditToggle}>
+        Add {summary}
+      </button>
     </div>
   );
 }
@@ -193,7 +195,9 @@ function EditForm({ onEditToggle, data, onDataChange }) {
         <button onClick={onEditToggle} type="button">
           Cancel
         </button>
-        <button type="submit">Save</button>
+        <button className="primary-button" type="submit">
+          Save
+        </button>
       </div>
     </form>
   );

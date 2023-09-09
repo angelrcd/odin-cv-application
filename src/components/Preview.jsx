@@ -3,8 +3,11 @@ export default function Preview({
   profilePic,
   education,
   experience,
+  styles,
 }) {
   const fullName = generalState.firstName + " " + generalState.lastName;
+  const [layout, color, font] = styles;
+
   return (
     <div>
       <img src={profilePic} alt="Profile pic" />
@@ -14,6 +17,9 @@ export default function Preview({
       <p>Location: {generalState.location}</p>
       <p>{JSON.stringify(experience)}</p>
       <p>{JSON.stringify(education)}</p>
+      <p>{layout}</p>
+      <p>{color}</p>
+      <p>{font}</p>
     </div>
   );
 }

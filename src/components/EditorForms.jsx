@@ -14,6 +14,8 @@ export default function EditorForms({
   onEducationChange,
   experience,
   onExperienceChange,
+  styles,
+  styleHandlers,
 }) {
   const [informationDetailsOpen, setInformationDetailsOpen] = useState(null);
   const handleDetailsChange = (accordionToOpen) => {
@@ -48,7 +50,7 @@ export default function EditorForms({
         />
       );
     case 3:
-      return <Layout />;
+      return <Layout styles={styles} styleHandlers={styleHandlers} />;
     default:
       break;
   }
