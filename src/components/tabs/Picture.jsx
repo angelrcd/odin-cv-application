@@ -21,8 +21,12 @@ export default function Picture({ profilePic, onChangeProfile }) {
       {profilePic && (
         <div className="editor-image-container">
           <img src={profilePic} alt="Profile pic" />
-          <button onClick={() => onChangeProfile("")} className="remove-pic">
-            Remove
+          <button
+            className="remove-pic clear btn button-with-icon"
+            onClick={() => onChangeProfile("")}>
+            <svg>
+              <use href="/icons/icons.svg#delete" />
+            </svg>
           </button>
         </div>
       )}
@@ -46,6 +50,7 @@ export default function Picture({ profilePic, onChangeProfile }) {
             onChange={onImageChange}
           />
           <input
+            className="btn primary-button"
             type="button"
             value="Browse..."
             onClick={() => inputRef.current.click()}

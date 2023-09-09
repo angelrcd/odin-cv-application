@@ -103,7 +103,9 @@ function AccordionContent({ summary, data, onDataChange, onEditToggle }) {
           />
         ))}
       </ul>
-      <button className="add-info-button primary-button" onClick={onEditToggle}>
+      <button
+        className="btn add-info-button primary-button"
+        onClick={onEditToggle}>
         Add {summary}
       </button>
     </div>
@@ -124,9 +126,11 @@ function DataListItem({ dataUnit, dataList, onDataChange }) {
   return (
     <li className="data-item">
       <span>{dataUnit.name}</span>
-      <div>
-        <button>edit</button>
-        <button onClick={() => removeData(dataUnit, dataList)}>remove</button>
+      <div className="list-info-button-container">
+        <button className="btn">edit</button>
+        <button className="btn" onClick={() => removeData(dataUnit, dataList)}>
+          remove
+        </button>
       </div>
     </li>
   );
@@ -175,7 +179,7 @@ function EditForm({ onEditToggle, data, onDataChange }) {
       <div className="date-row">
         <label>
           <span>Start date</span>
-          <input name="startDate" required type="mont" placeholder="2018-05" />
+          <input name="startDate" required type="month" placeholder="2018-05" />
         </label>
         {!ongoing && (
           <label>
@@ -192,10 +196,10 @@ function EditForm({ onEditToggle, data, onDataChange }) {
           className="info-form-description"></textarea>
       </label>
       <div className="buttons-container">
-        <button onClick={onEditToggle} type="button">
+        <button className="btn" onClick={onEditToggle} type="button">
           Cancel
         </button>
-        <button className="primary-button" type="submit">
+        <button className="btn primary-button" type="submit">
           Save
         </button>
       </div>

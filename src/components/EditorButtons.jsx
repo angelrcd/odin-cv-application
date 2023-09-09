@@ -27,9 +27,18 @@ export default function EditorButtons({
   };
 
   return (
-    <div className="buttons-container">
-      <button onClick={setExample}>Example</button>
-      <button onClick={clear}>Clear</button>
+    <div className="editor-buttons-container">
+      <div className="buttons-container">
+        <button className="btn" onClick={setExample}>
+          Example
+        </button>
+        <button className="btn button-with-icon clear" onClick={clear}>
+          <svg>
+            <use href="/icons/icons.svg#delete" />
+          </svg>
+          Clear
+        </button>
+      </div>
     </div>
   );
 }

@@ -31,20 +31,34 @@ body {
   padding: 1rem;
 }
 
+:root {
+  --accent-color: #1095C1;
+  --negative-color: #EF4444;
+
+  --foreground-color: #FFFFFF;
+  --background-color: #EEEEEE;
+
+  --container-border-radius: 12px;
+  --container-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
 #root {
   display: flex;
   gap: 3rem;
   justify-content: space-around;
 }
 
-.primary-button {
-  background-color: #1095C1;
-  cursor: pointer;  
+.btn {
+  cursor: pointer;
   font-weight: 600;
-  color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: var(--container-border-radius);
   padding: 0.5rem 1rem;
+}
+
+.primary-button {
+  background-color: var(--accent-color);
+  color: white;
   transition: all 100ms ease-in-out;
 }
 
@@ -52,12 +66,49 @@ body {
   background-color: hsl(195, 80%, 50%);
 }
 
+.button-with-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  & svg {
+    height: 1rem;
+    aspect-ratio: 1/1;
+  }
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="month"],
+textarea
+{
+  padding: 0.6rem 1rem;
+}
+
+input[type="color"]{
+  cursor: pointer;
+  padding: 0;
+  border: 0;
+}
+
+
 /* Tabs */
+
+nav {
+  padding: 5px;
+  background-color: var(--foreground-color);
+  margin-bottom: 10px;
+  border-radius: var(--container-border-radius);
+  box-shadow: var(--container-shadow);
+}
 
 .tabs-container {
   padding-left: 0px;
   list-style: none;
   display: flex;
+  gap: 5px;
 }
 
 .tabs-container li {
@@ -66,15 +117,21 @@ body {
 
 .tab {
   cursor: pointer;
-  background-color: #EEEEEE;
-  border: 1px solid #ddd;
+  background-color: transparent;
+  border: none;
+  border-radius: var(--container-border-radius);
   padding: 0.5rem 1rem;
+  font-weight: 600;
   width: 100%;
 }
 
-.tab.selected {
-  background-color: white;
-  border-bottom-color: white;
+.tab.selected,
+.btn.selected {
+  background-color: var(--accent-color);
+}
+
+.tab:not(.selected):hover {
+  background-color: var(--background-color);
 }
 
 .editor-form {
@@ -92,10 +149,26 @@ body {
   }
 }
 
-.buttons-container {
+.editor-buttons-container {
   display: flex;
   justify-content: end;
-  gap: 0.5rem;
+}
+
+.buttons-container {
+  display: flex;
+  width: fit-content;
+
+  background-color: var(--foreground-color);
+  padding: 5px;
+  border-radius: var(--container-border-radius);
+  
+  gap: 5px;
+}
+
+button.clear {
+  background: var(--negative-color);
+  color: white;
+  font-weight: 600;
 }
 
 /* Picture profile */
@@ -105,6 +178,7 @@ body {
     height: 250px;
     object-fit: cover;
     border-radius: 100%;
+    box-shadow: var(--container-shadow);
   }
 }
 
@@ -115,7 +189,13 @@ body {
 .editor-image-container .remove-pic {
   position: absolute;
   top: 80%;
-  left: 150px;
+  left: 180px;
+  border-radius: 100%;
+  aspect-ratio: 1/1;
+
+  % svg {
+    height: 100px;
+  }
 }
 
 /* General tab */
@@ -125,8 +205,8 @@ body {
 
 .editor-form {
   background-color: white;
-  border: 1px solid #ddd;
-  border-top-color: white;
+  border-radius: var(--container-border-radius);
+  box-shadow: var(--container-shadow);
   min-height: 600px;
 }
 
@@ -168,6 +248,15 @@ body {
   transform: rotate(90deg);
 }
 
+.accordion li {
+  padding-bottom: 0.5rem;
+}
+
+.list-info-button-container{
+  display: flex;
+  gap: 5px;
+}
+
 .add-info-button {
   width: 100%;
   margin-top: 1rem;
@@ -198,4 +287,33 @@ body {
 
 .info-form-description {
   resize: vertical;
+}
+
+/* Style */
+#layout-form section {
+  padding-bottom: 1.5rem;
+}
+
+#layout-form button {
+  margin-right: 5px;
+}
+
+.font-btn {
+  display: flex;
+  flex-direction: column;
+}
+
+.font-btn[data-font="serif"]{
+  font-family: serif;
+  font-size: 1rem;
+}
+
+.font-btn[data-font="sans"]{
+  font-family: sans-serif;
+  font-size: 1rem;
+}
+
+.font-btn[data-font="mono"]{
+  font-family: monospace;
+  font-size: 1rem;
 }
