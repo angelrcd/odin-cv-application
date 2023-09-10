@@ -32,7 +32,7 @@ export default function Style({ styles, styleHandlers }) {
               font == "sans" ? "selected btn font-btn" : "btn font-btn"
             }
             data-font="sans"
-            onClick={() => setFont("sans")}>
+            onClick={() => setFont("sans-serif")}>
             <span>Aa</span>
             <span>Sans</span>
           </button>
@@ -41,7 +41,7 @@ export default function Style({ styles, styleHandlers }) {
               font == "mono" ? "selected btn font-btn" : "btn font-btn"
             }
             data-font="mono"
-            onClick={() => setFont("mono")}>
+            onClick={() => setFont("monospace")}>
             <span>Aa</span>
             <span>Mono</span>
           </button>
