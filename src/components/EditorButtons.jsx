@@ -12,6 +12,7 @@ export default function EditorButtons({
     onChangeProfile(EXAMPLE.profilePicUrl);
     generalHandlers.handleFirstNameChange(EXAMPLE.firstName);
     generalHandlers.handleLastNameChange(EXAMPLE.lastName);
+    generalHandlers.handleJobTitleChange(EXAMPLE.jobTitle);
     generalHandlers.handleEmailChange(EXAMPLE.email);
     generalHandlers.handlePhoneChange(EXAMPLE.phone);
     generalHandlers.handleLocationChange(EXAMPLE.location);

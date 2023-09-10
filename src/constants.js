@@ -7,6 +7,7 @@ export const EXAMPLE = {
   profilePicUrl: "/sample-profile.jpg",
   firstName: "John",
   lastName: "Doe",
+  jobTitle: "FullStack Developer",
   email: "john_doe@email.com",
   phone: "+34 52912933",
   location: "New York, USA",

@@ -16,6 +16,11 @@ export default function General({ generalState, generalHandlers }) {
           handler={generalHandlers.handleLastNameChange}
         />
         <GeneralInput
+          label="Job title"
+          state={generalState.jobTitle}
+          handler={generalHandlers.handleJobTitleChange}
+        />
+        <GeneralInput
           label="Email"
           type="email"
           state={generalState.email}
