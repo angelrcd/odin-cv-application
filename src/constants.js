@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 dayjs.extend(customParseFormat);
 
-export const TABS = ["Picture", "General", "Information", "Layout"];
+export const TABS = ["Picture", "General", "Information", "Style"];
 export const EXAMPLE = {
   profilePicUrl: "/sample-profile.jpg",
   firstName: "John",

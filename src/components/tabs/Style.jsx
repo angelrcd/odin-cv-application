@@ -1,21 +1,9 @@
-export default function Layout({ styles, styleHandlers }) {
-  const [layout, color, font] = styles;
-  const [setLayout, setColor, setFont] = styleHandlers;
+export default function Style({ styles, styleHandlers }) {
+  const [color, font] = styles;
+  const [setColor, setFont] = styleHandlers;
 
   return (
-    <section id="layout-form" role="tabpanel" className="editor-form">
-      <section>
-        <h2>Layout</h2>
-        <button className="btn" onClick={() => setLayout("top")}>
-          Top
-        </button>
-        <button className="btn" onClick={() => setLayout("left")}>
-          Left
-        </button>
-        <button className="btn" onClick={() => setLayout("right")}>
-          Right
-        </button>
-      </section>
+    <section id="style-form" role="tabpanel" className="editor-form">
       <section>
         <h2>Color</h2>
         <label>

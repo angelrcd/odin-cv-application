@@ -1,7 +1,7 @@
 import Picture from "./tabs/Picture";
 import General from "./tabs/General";
 import Information from "./tabs/Information";
-import Layout from "./tabs/Layout";
+import Style from "./tabs/Style";
 import { useState } from "react";
 
 export default function EditorForms({
@@ -50,7 +50,7 @@ export default function EditorForms({
         />
       );
     case 3:
-      return <Layout styles={styles} styleHandlers={styleHandlers} />;
+      return <Style styles={styles} styleHandlers={styleHandlers} />;
     default:
       break;
   }
