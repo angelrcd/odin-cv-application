@@ -18,6 +18,7 @@ function App() {
   const [font, setFont] = useState("serif");
   const styleData = [color, font];
   const styleHandlers = [setColor, setFont];
+  const [showPreview, setShowPreview] = useState(false);
 
   // Event Handlers
   const handleFirstNameChange = (newVal) => setfirstName(newVal);
@@ -46,6 +47,8 @@ function App() {
         onExperienceChange={setExperience}
         styles={styleData}
         styleHandlers={styleHandlers}
+        showPreview={showPreview}
+        setShowPreview={setShowPreview}
       />
       <Preview
         generalState={generalState}
@@ -53,6 +56,7 @@ function App() {
         education={education}
         experience={experience}
         styles={styleData}
+        showPreview={showPreview}
       />
     </>
   );

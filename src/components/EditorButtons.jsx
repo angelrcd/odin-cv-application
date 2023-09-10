@@ -5,6 +5,8 @@ export default function EditorButtons({
   generalHandlers,
   onEducationChange,
   onExperienceChange,
+  showPreview,
+  setShowPreview,
 }) {
   const setExample = () => {
     onChangeProfile(EXAMPLE.profilePicUrl);
@@ -26,17 +28,33 @@ export default function EditorButtons({
     onExperienceChange([]);
   };
 
+  const showIcon = showPreview ? (
+    <svg>
+      <use href="/icons/icons.svg#hide" />
+    </svg>
+  ) : (
+    <svg>
+      <use href="/icons/icons.svg#show" />
+    </svg>
+  );
+
   return (
     <div className="editor-buttons-container">
       <div className="buttons-container">
-        <button className="btn" onClick={setExample}>
-          Example
-        </button>
         <button className="btn button-with-icon clear" onClick={clear}>
           <svg>
             <use href="/icons/icons.svg#delete" />
           </svg>
           Clear
+        </button>
+        <button className="btn" onClick={setExample}>
+          Example
+        </button>
+        <button
+          onClick={() => setShowPreview(!showPreview)}
+          className="btn button-with-icon">
+          {showIcon}
+          Preview
         </button>
       </div>
     </div>

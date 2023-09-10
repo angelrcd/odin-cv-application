@@ -12,6 +12,8 @@ export default function EditorContainer({
   onExperienceChange,
   styles,
   styleHandlers,
+  showPreview,
+  setShowPreview,
 }) {
   return (
     <main>
@@ -32,6 +34,8 @@ export default function EditorContainer({
         generalHandlers={generalHandlers}
         onEducationChange={onEducationChange}
         onExperienceChange={onExperienceChange}
+        showPreview={showPreview}
+        setShowPreview={setShowPreview}
       />
     </main>
   );

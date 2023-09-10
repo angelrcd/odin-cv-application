@@ -4,9 +4,12 @@ export default function Preview({
   education,
   experience,
   styles,
+  showPreview,
 }) {
   const fullName = generalState.firstName + " " + generalState.lastName;
   const [color, font] = styles;
+
+  if (!showPreview) return;
 
   return (
     <div>
