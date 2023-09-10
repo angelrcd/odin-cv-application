@@ -3,12 +3,6 @@ import { useRef } from "react";
 export default function Picture({ profilePic, onChangeProfile }) {
   const inputRef = useRef(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const newUrl = e.target[0].value;
-    onChangeProfile(newUrl);
-    e.target[0].value = "";
-  };
   const onImageChange = (event) => {
     if (event.target.files && event.target.files[0]) {
       onChangeProfile(URL.createObjectURL(event.target.files[0]));
@@ -30,17 +24,8 @@ export default function Picture({ profilePic, onChangeProfile }) {
           </button>
         </div>
       )}
-      <form onSubmit={handleSubmit}>
-        <label>
-          <span>Image URL</span>
-          <input type="text" />
-        </label>
-        <button type="submit">Save</button>
-      </form>
-      <span>
-        <b>or</b>
-      </span>
-      <form>
+      {!profilePic && <p>--No picture--</p>}
+      <form style={{ marginTop: "1rem" }}>
         <label>
           <span>Upload new pic</span>
           <input
