@@ -26,7 +26,7 @@ function App() {
   const [font, setFont] = useState("serif");
   const styleData = [color, font];
   const styleHandlers = [setColor, setFont];
-  const [showPreview, setShowPreview] = useState(false);
+  const [showPreview, setShowPreview] = useState(true);
 
   // Event Handlers
   const handleFirstNameChange = (newVal) => setfirstName(newVal);
