@@ -319,7 +319,7 @@ button.clear {
 
 /* Preview */
 .preview-container {
-  max-width: 30cm;
+  width: 30cm;
   background-color: white;
 
   & .container {
